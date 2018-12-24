@@ -33,22 +33,24 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.radioButtonUseX = new System.Windows.Forms.RadioButton();
-            this.radioButtonUseY = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxImageFormat = new System.Windows.Forms.ComboBox();
+            this.checkBoxSaveWithNewName = new System.Windows.Forms.CheckBox();
+            this.radioButtonUseY = new System.Windows.Forms.RadioButton();
+            this.radioButtonUseX = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(233, 148);
+            this.label1.Location = new System.Drawing.Point(229, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 0;
@@ -56,9 +58,9 @@
             // 
             // btnPin
             // 
-            this.btnPin.Location = new System.Drawing.Point(443, 12);
+            this.btnPin.Location = new System.Drawing.Point(12, 12);
             this.btnPin.Name = "btnPin";
-            this.btnPin.Size = new System.Drawing.Size(92, 23);
+            this.btnPin.Size = new System.Drawing.Size(521, 23);
             this.btnPin.TabIndex = 1;
             this.btnPin.Text = "Pin";
             this.btnPin.UseVisualStyleBackColor = true;
@@ -88,19 +90,86 @@
             // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.checkBox1);
+            this.panel1.Controls.Add(this.comboBoxImageFormat);
+            this.panel1.Controls.Add(this.checkBoxSaveWithNewName);
             this.panel1.Controls.Add(this.radioButtonUseY);
             this.panel1.Controls.Add(this.radioButtonUseX);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.numericUpDown1);
             this.panel1.Controls.Add(this.trackBar1);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(3, 239);
+            this.panel1.Location = new System.Drawing.Point(12, 237);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(523, 107);
             this.panel1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(191, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(52, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "fileFormat";
+            // 
+            // comboBox1
+            // 
+            this.comboBoxImageFormat.FormattingEnabled = true;
+            this.comboBoxImageFormat.Items.AddRange(new object[] {
+            "PNG",
+            "JPG"});
+            this.comboBoxImageFormat.Location = new System.Drawing.Point(262, 12);
+            this.comboBoxImageFormat.Name = "comboBox1";
+            this.comboBoxImageFormat.Size = new System.Drawing.Size(106, 21);
+            this.comboBoxImageFormat.TabIndex = 9;
+            this.comboBoxImageFormat.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBoxSaveWithNewName.AutoSize = true;
+            this.checkBoxSaveWithNewName.Checked = true;
+            this.checkBoxSaveWithNewName.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSaveWithNewName.Location = new System.Drawing.Point(13, 84);
+            this.checkBoxSaveWithNewName.Name = "checkBox1";
+            this.checkBoxSaveWithNewName.Size = new System.Drawing.Size(127, 17);
+            this.checkBoxSaveWithNewName.TabIndex = 8;
+            this.checkBoxSaveWithNewName.Text = "Save with new Name";
+            this.checkBoxSaveWithNewName.UseVisualStyleBackColor = true;
+            this.checkBoxSaveWithNewName.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // radioButtonUseY
+            // 
+            this.radioButtonUseY.AutoSize = true;
+            this.radioButtonUseY.Location = new System.Drawing.Point(77, 56);
+            this.radioButtonUseY.Name = "radioButtonUseY";
+            this.radioButtonUseY.Size = new System.Drawing.Size(56, 17);
+            this.radioButtonUseY.TabIndex = 7;
+            this.radioButtonUseY.Text = "Height";
+            this.radioButtonUseY.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonUseX
+            // 
+            this.radioButtonUseX.AutoSize = true;
+            this.radioButtonUseX.Checked = true;
+            this.radioButtonUseX.Location = new System.Drawing.Point(13, 56);
+            this.radioButtonUseX.Name = "radioButtonUseX";
+            this.radioButtonUseX.Size = new System.Drawing.Size(53, 17);
+            this.radioButtonUseX.TabIndex = 6;
+            this.radioButtonUseX.TabStop = true;
+            this.radioButtonUseX.Text = "Width";
+            this.radioButtonUseX.UseVisualStyleBackColor = true;
+            this.radioButtonUseX.CheckedChanged += new System.EventHandler(this.radioButtonUseX_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 13);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "New Max Res";
             // 
             // numericUpDown1
             // 
@@ -125,71 +194,14 @@
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // label3
+            // panel2
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "New Max Res";
-            // 
-            // radioButtonUseX
-            // 
-            this.radioButtonUseX.AutoSize = true;
-            this.radioButtonUseX.Checked = true;
-            this.radioButtonUseX.Location = new System.Drawing.Point(13, 56);
-            this.radioButtonUseX.Name = "radioButtonUseX";
-            this.radioButtonUseX.Size = new System.Drawing.Size(53, 17);
-            this.radioButtonUseX.TabIndex = 6;
-            this.radioButtonUseX.TabStop = true;
-            this.radioButtonUseX.Text = "Width";
-            this.radioButtonUseX.UseVisualStyleBackColor = true;
-            this.radioButtonUseX.CheckedChanged += new System.EventHandler(this.radioButtonUseX_CheckedChanged);
-            // 
-            // radioButtonUseY
-            // 
-            this.radioButtonUseY.AutoSize = true;
-            this.radioButtonUseY.Location = new System.Drawing.Point(77, 56);
-            this.radioButtonUseY.Name = "radioButtonUseY";
-            this.radioButtonUseY.Size = new System.Drawing.Size(56, 17);
-            this.radioButtonUseY.TabIndex = 7;
-            this.radioButtonUseY.Text = "Height";
-            this.radioButtonUseY.UseVisualStyleBackColor = true;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(13, 84);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(127, 17);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Save with new Name";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "PNG",
-            "JPG"});
-            this.comboBox1.Location = new System.Drawing.Point(278, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(216, 21);
-            this.comboBox1.TabIndex = 9;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(191, 12);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "fileFormat";
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(12, 41);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(521, 190);
+            this.panel2.TabIndex = 5;
             // 
             // Form1
             // 
@@ -197,18 +209,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 356);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPin);
-            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.ShowIcon = false;
+            this.Text = "Image Resizer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -223,9 +238,10 @@
         private System.Windows.Forms.RadioButton radioButtonUseX;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.CheckBox checkBoxSaveWithNewName;
+        private System.Windows.Forms.ComboBox comboBoxImageFormat;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

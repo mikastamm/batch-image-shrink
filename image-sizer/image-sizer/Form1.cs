@@ -67,8 +67,6 @@ namespace image_sizer
             saveWithNewName = !saveWithNewName;
         }
 
-        //Dragdrop sttuff
-
         void Form1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.Html) || e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
@@ -99,23 +97,6 @@ namespace image_sizer
                 int height = useX ? res * image.Height / image.Width : res;
 
                 Bitmap destImage = new Bitmap(image, new Size(width, height));
-
-                //Rectangle destRect = new Rectangle(0, 0, width, height);
-
-                //using (var graphics = Graphics.FromImage(destImage))
-                //{
-                //    graphics.CompositingMode = CompositingMode.SourceCopy;
-                //    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                //    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                //    graphics.SmoothingMode = SmoothingMode.HighQuality;
-                //    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-                //    using (var wrapMode = new ImageAttributes())
-                //    {
-                //        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                //        graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-                //    }
-                //}
 
                 //Save as jpg
                 ImageCodecInfo encoder = GetEncoder(imageFormat);
@@ -157,20 +138,33 @@ namespace image_sizer
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedText == "PNG")
+            if (comboBoxImageFormat.SelectedText == "PNG")
             {
                 imageFormat = ImageFormat.Png;
+                trackBar1.Enabled = false;
             }
-            else if (comboBox1.SelectedText == "JPG")
+            else if (comboBoxImageFormat.SelectedText == "JPG")
             {
                 imageFormat = ImageFormat.Jpeg;
+                trackBar1.Enabled = true;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            comboBox1.SelectedIndex = 0;
+            comboBoxImageFormat.SelectedIndex = 0;
             imageFormat = ImageFormat.Png;
+
+            ToolTip toolTip1 = new ToolTip();
+            toolTip1.AutoPopDelay = 5000;
+            toolTip1.InitialDelay = 1000;
+            toolTip1.ReshowDelay = 500;
+            toolTip1.ShowAlways = true;
+
+            toolTip1.SetToolTip(radioButtonUseX, "If the images width is larger than \"New max res\" it gets set to \"New max res\". the height will be scaled accordingly");
+            toolTip1.SetToolTip(radioButtonUseY, "If the images height is larger than \"New max res\" it gets set to \"New max res\". the width will be scaled accordingly");
+            toolTip1.SetToolTip(trackBar1, "Compression quality of the jpeg image");
+            toolTip1.SetToolTip(checkBoxSaveWithNewName, "If unchecked overrides the original image");
 
         }
     }
