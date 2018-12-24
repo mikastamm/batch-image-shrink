@@ -1,0 +1,10 @@
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\bin\Debug\image-sizer.exe.config
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\bin\Debug\image-sizer.exe
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\bin\Debug\image-sizer.pdb
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\obj\Debug\image-sizer.csprojAssemblyReference.cache
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\obj\Debug\image_sizer.Form1.resources
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\obj\Debug\image_sizer.Properties.Resources.resources
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\obj\Debug\image-sizer.csproj.GenerateResource.cache
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\obj\Debug\image-sizer.csproj.CoreCompileInputs.cache
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\obj\Debug\image-sizer.exe
+D:\Mika\Documents\Youtube\image-sizer\image-sizer\obj\Debug\image-sizer.pdb
